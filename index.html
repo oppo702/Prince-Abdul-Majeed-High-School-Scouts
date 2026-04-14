@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ثانوية الأمير عبد المجيد بن عبدالعزيز</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&amp;family=Readex+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Tajawal', sans-serif; }
+    html, body { height: 100%; margin: 0; }
+    .hero-pattern {
+      background: linear-gradient(135deg, #0c2d1f 0%, #1a5c3a 40%, #0f3d28 70%, #0a1f14 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-pattern::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .geometric-accent {
+      position: absolute;
+      width: 300px; height: 300px;
+      border: 2px solid rgba(212, 175, 55, 0.15);
+      transform: rotate(45deg);
+      border-radius: 8px;
+    }
+    .card-hover { transition: transform 0.3s, box-shadow 0.3s; }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .gold-gradient { background: linear-gradient(135deg, #d4af37, #f0d060, #d4af37); }
+    .section-divider {
+      width: 80px; height: 4px;
+      background: linear-gradient(90deg, #d4af37, #f0d060);
+      border-radius: 2px;
+      margin: 0 auto;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -4px; right: 0;
+      width: 0; height: 2px; background: #d4af37;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after { width: 100%; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    .float-anim { animation: float 4s ease-in-out infinite; }
+    .scrollable-wrapper { height: 100%; overflow-y: auto; overflow-x: hidden; }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full bg-[#faf9f6]">
+  <div class="scrollable-wrapper" id="main-wrapper"><!-- Navigation -->
+   <nav class="fixed top-0 right-0 left-0 z-50 bg-[#0c2d1f]/95 backdrop-blur-md border-b border-[#d4af37]/20">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+     <div class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center">
+       <svg width="28" height="28" viewbox="0 0 24 24" fill="none" stroke="#0c2d1f" stroke-width="2">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+       </svg>
+      </div>
+      <div>
+       <h1 class="text-white font-bold text-sm leading-tight" id="nav-title">ثانوية الأمير عبد المجيد بن عبدالعزيز</h1>
+       <p class="text-[#d4af37] text-xs">مدرسة حكومية - بنين</p>
+      </div>
+     </div>
+     <div class="hidden md:flex items-center gap-6"><a href="#home" class="nav-link text-white/80 hover:text-white text-sm">الرئيسية</a> <a href="#about" class="nav-link text-white/80 hover:text-white text-sm">عن المدرسة</a> <a href="#features" class="nav-link text-white/80 hover:text-white text-sm">المميزات</a> <a href="#news" class="nav-link text-white/80 hover:text-white text-sm">الأخبار</a> <a href="#contact" class="nav-link text-white/80 hover:text-white text-sm">تواصل معنا</a>
+     </div><button id="mobile-menu-btn" class="md:hidden text-white"> <i data-lucide="menu" style="width:24px;height:24px;"></i> </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-[#0c2d1f] border-t border-[#d4af37]/20 px-4 py-3 flex flex-col gap-3"><a href="#home" class="text-white/80 hover:text-white text-sm">الرئيسية</a> <a href="#about" class="text-white/80 hover:text-white text-sm">عن المدرسة</a> <a href="#features" class="text-white/80 hover:text-white text-sm">المميزات</a> <a href="#news" class="text-white/80 hover:text-white text-sm">الأخبار</a> <a href="#contact" class="text-white/80 hover:text-white text-sm">تواصل معنا</a>
+    </div>
+   </nav><!-- Hero Section -->
+   <section id="home" class="hero-pattern relative pt-24 pb-20 md:pt-32 md:pb-28">
+    <div class="geometric-accent" style="top:-100px;right:-100px;"></div>
+    <div class="geometric-accent" style="bottom:-150px;left:-80px;width:200px;height:200px;"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+     <div class="float-anim inline-block mb-6">
+      <div class="w-24 h-24 rounded-full gold-gradient flex items-center justify-center mx-auto shadow-lg shadow-[#d4af37]/30">
+       <svg width="48" height="48" viewbox="0 0 24 24" fill="none" stroke="#0c2d1f" stroke-width="1.5">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+       </svg>
+      </div>
+     </div>
+     <h1 id="hero-title" class="text-3xl md:text-5xl font-black text-white mb-4 leading-tight" style="font-family:'Readex Pro','Tajawal',sans-serif;">ثانوية الأمير عبد المجيد<br>
+      بن عبدالعزيز</h1>
+     <p id="hero-welcome" class="text-[#d4af37] text-lg md:text-xl mb-8 font-light">نبني أجيالًا بالعلم والقيم نحو مستقبل مشرق</p>
+     <div class="flex flex-wrap justify-center gap-4 mb-12"><a href="#contact" class="gold-gradient text-[#0c2d1f] font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105 text-sm">تواصل معنا</a> <a href="#about" class="border-2 border-[#d4af37]/50 text-white px-8 py-3 rounded-lg hover:bg-[#d4af37]/10 transition-all text-sm">تعرّف علينا</a>
+     </div><!-- Stats -->
+     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+      <div class="stat-card rounded-xl p-4">
+       <p class="text-3xl font-black text-[#d4af37]">+500</p>
+       <p class="text-white/70 text-xs mt-1">طالب</p>
+      </div>
+      <div class="stat-card rounded-xl p-4">
+       <p class="text-3xl font-black text-[#d4af37]">+45</p>
+       <p class="text-white/70 text-xs mt-1">معلم متميز</p>
+      </div>
+      <div class="stat-card rounded-xl p-4">
+       <p class="text-3xl font-black text-[#d4af37]">98%</p>
+       <p class="text-white/70 text-xs mt-1">نسبة النجاح</p>
+      </div>
+      <div class="stat-card rounded-xl p-4">
+       <p class="text-3xl font-black text-[#d4af37]">+30</p>
+       <p class="text-white/70 text-xs mt-1">عامًا من التميز</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- About Section -->
+   <section id="about" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+     <div class="text-center mb-12 fade-in">
+      <p class="text-[#d4af37] font-bold text-sm mb-2">من نحن</p>
+      <h2 class="text-2xl md:text-4xl font-black text-[#0c2d1f] mb-4" style="font-family:'Readex Pro','Tajawal',sans-serif;">نبذة عن المدرسة</h2>
+      <div class="section-divider"></div>
+     </div>
+     <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="fade-in">
+       <div class="bg-gradient-to-br from-[#0c2d1f] to-[#1a5c3a] rounded-2xl p-8 text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-5">
+         <svg viewbox="0 0 200 200" class="w-full h-full">
+          <polygon points="100,10 190,60 190,140 100,190 10,140 10,60" fill="white" />
+         </svg>
+        </div>
+        <p id="about-text" class="relative z-10 leading-loose text-white/90">تُعد ثانوية الأمير عبد المجيد بن عبدالعزيز من المدارس الحكومية المتميزة في شمال الرياض، حيث تقدم بيئة تعليمية محفزة تجمع بين التميز الأكاديمي والتربية القيمية. تأسست المدرسة لخدمة أبناء حي النخيل والأحياء المجاورة، وتسعى دائمًا لتخريج طلاب مؤهلين للمرحلة الجامعية وسوق العمل.</p>
+       </div>
+      </div>
+      <div class="fade-in space-y-4">
+       <div class="flex items-start gap-4 bg-[#faf9f6] rounded-xl p-5">
+        <div class="w-10 h-10 rounded-lg bg-[#0c2d1f] flex items-center justify-center flex-shrink-0"><i data-lucide="map-pin" style="width:20px;height:20px;color:#d4af37;"></i>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#0c2d1f] text-sm">الموقع</h4>
+         <p class="text-[#0c2d1f]/70 text-xs mt-1">شارع سراج الدين العسقلاني، حي النخيل، الرياض 12381</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-4 bg-[#faf9f6] rounded-xl p-5">
+        <div class="w-10 h-10 rounded-lg bg-[#0c2d1f] flex items-center justify-center flex-shrink-0"><i data-lucide="building" style="width:20px;height:20px;color:#d4af37;"></i>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#0c2d1f] text-sm">التبعية الإدارية</h4>
+         <p class="text-[#0c2d1f]/70 text-xs mt-1">الإدارة العامة للتعليم بمنطقة الرياض - مكتب تعليم شمال الرياض</p>
+        </div>
+       </div>
+       <div class="flex items-start gap-4 bg-[#faf9f6] rounded-xl p-5">
+        <div class="w-10 h-10 rounded-lg bg-[#0c2d1f] flex items-center justify-center flex-shrink-0"><i data-lucide="users" style="width:20px;height:20px;color:#d4af37;"></i>
+        </div>
+        <div>
+         <h4 class="font-bold text-[#0c2d1f] text-sm">النوع</h4>
+         <p class="text-[#0c2d1f]/70 text-xs mt-1">مدرسة حكومية ثانوية (بنين)</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Principal Message -->
+   <section class="py-16 bg-[#faf9f6]">
+    <div class="max-w-4xl mx-auto px-4">
+     <div class="fade-in bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-[#d4af37]/10 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 gold-gradient opacity-10 rounded-bl-full"></div>
+      <div class="flex items-center gap-3 mb-6">
+       <div class="w-14 h-14 rounded-full bg-[#0c2d1f] flex items-center justify-center"><i data-lucide="quote" style="width:24px;height:24px;color:#d4af37;"></i>
+       </div>
+       <div>
+        <h3 class="font-bold text-[#0c2d1f] text-lg">كلمة مدير المدرسة</h3>
+        <p class="text-[#d4af37] text-xs">رسالة ترحيبية</p>
+       </div>
+      </div>
+      <p id="principal-msg" class="text-[#0c2d1f]/80 leading-loose text-sm">بسم الله الرحمن الرحيم، يسعدني أن أرحب بكم في ثانوية الأمير عبد المجيد بن عبدالعزيز. نحن نؤمن بأن التعليم ليس مجرد نقل معرفة، بل هو بناء شخصية متكاملة قادرة على المساهمة في نهضة وطننا الغالي. نعمل جاهدين لتوفير بيئة تعليمية آمنة ومحفزة، ونتطلع دائمًا للتعاون مع أولياء الأمور لتحقيق أفضل النتائج لأبنائنا الطلاب.</p>
+     </div>
+    </div>
+   </section><!-- Features Section -->
+   <section id="features" class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+     <div class="text-center mb-12 fade-in">
+      <p class="text-[#d4af37] font-bold text-sm mb-2">لماذا نتميز</p>
+      <h2 class="text-2xl md:text-4xl font-black text-[#0c2d1f] mb-4" style="font-family:'Readex Pro','Tajawal',sans-serif;">مميزات المدرسة</h2>
+      <div class="section-divider"></div>
+     </div>
+     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card-hover fade-in bg-[#faf9f6] rounded-2xl p-6 border border-transparent hover:border-[#d4af37]/30">
+       <div class="w-12 h-12 rounded-xl bg-[#0c2d1f] flex items-center justify-center mb-4">
+        <i data-lucide="graduation-cap" style="width:24px;height:24px;color:#d4af37;"></i>
+       </div>
+       <h3 class="font-bold text-[#0c2d1f] mb-2">كادر تعليمي متميز</h3>
+       <p class="text-[#0c2d1f]/60 text-xs leading-relaxed">نخبة من المعلمين المؤهلين وذوي الخبرة في مختلف التخصصات الدراسية.</p>
+      </div>
+      <div class="card-hover fade-in bg-[#faf9f6] rounded-2xl p-6 border border-transparent hover:border-[#d4af37]/30">
+       <div class="w-12 h-12 rounded-xl bg-[#0c2d1f] flex items-center justify-center mb-4">
+        <i data-lucide="monitor" style="width:24px;height:24px;color:#d4af37;"></i>
+       </div>
+       <h3 class="font-bold text-[#0c2d1f] mb-2">معامل حديثة</h3>
+       <p class="text-[#0c2d1f]/60 text-xs leading-relaxed">معامل حاسب آلي وعلوم مجهزة بأحدث التقنيات لدعم التعلم العملي.</p>
+      </div>
+      <div class="card-hover fade-in bg-[#faf9f6] rounded-2xl p-6 border border-transparent hover:border-[#d4af37]/30">
+       <div class="w-12 h-12 rounded-xl bg-[#0c2d1f] flex items-center justify-center mb-4">
+        <i data-lucide="trophy" style="width:24px;height:24px;color:#d4af37;"></i>
+       </div>
+       <h3 class="font-bold text-[#0c2d1f] mb-2">أنشطة لا صفية</h3>
+       <p class="text-[#0c2d1f]/60 text-xs leading-relaxed">برامج رياضية وثقافية وعلمية متنوعة تنمي مواهب الطلاب.</p>
+      </div>
+      <div class="card-hover fade-in bg-[#faf9f6] rounded-2xl p-6 border border-transparent hover:border-[#d4af37]/30">
+       <div class="w-12 h-12 rounded-xl bg-[#0c2d1f] flex items-center justify-center mb-4">
+        <i data-lucide="shield-check" style="width:24px;height:24px;color:#d4af37;"></i>
+       </div>
+       <h3 class="font-bold text-[#0c2d1f] mb-2">بيئة آمنة</h3>
+       <p class="text-[#0c2d1f]/60 text-xs leading-relaxed">توفير بيئة مدرسية آمنة ومحفزة تساعد على التركيز والإبداع.</p>
+      </div>
+      <div class="card-hover fade-in bg-[#faf9f6] rounded-2xl p-6 border border-transparent hover:border-[#d4af37]/30">
+       <div class="w-12 h-12 rounded-xl bg-[#0c2d1f] flex items-center justify-center mb-4">
+        <i data-lucide="book-open" style="width:24px;height:24px;color:#d4af37;"></i>
+       </div>
+       <h3 class="font-bold text-[#0c2d1f] mb-2">مناهج متطورة</h3>
+       <p class="text-[#0c2d1f]/60 text-xs leading-relaxed">تطبيق أحدث المناهج التعليمية المعتمدة من وزارة التعليم.</p>
+      </div>
+      <div class="card-hover fade-in bg-[#faf9f6] rounded-2xl p-6 border border-transparent hover:border-[#d4af37]/30">
+       <div class="w-12 h-12 rounded-xl bg-[#0c2d1f] flex items-center justify-center mb-4">
+        <i data-lucide="heart-handshake" style="width:24px;height:24px;color:#d4af37;"></i>
+       </div>
+       <h3 class="font-bold text-[#0c2d1f] mb-2">إرشاد طلابي</h3>
+       <p class="text-[#0c2d1f]/60 text-xs leading-relaxed">خدمات إرشادية ونفسية متكاملة لدعم الطلاب أكاديميًا وشخصيًا.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- News Section -->
+   <section id="news" class="py-16 bg-[#faf9f6]">
+    <div class="max-w-6xl mx-auto px-4">
+     <div class="text-center mb-12 fade-in">
+      <p class="text-[#d4af37] font-bold text-sm mb-2">آخر المستجدات</p>
+      <h2 class="text-2xl md:text-4xl font-black text-[#0c2d1f] mb-4" style="font-family:'Readex Pro','Tajawal',sans-serif;">أخبار المدرسة</h2>
+      <div class="section-divider"></div>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6">
+      <div class="card-hover fade-in bg-white rounded-2xl overflow-hidden shadow-sm">
+       <div class="h-40 bg-gradient-to-br from-[#0c2d1f] to-[#1a5c3a] flex items-center justify-center"><i data-lucide="calendar-check" style="width:48px;height:48px;color:#d4af37;"></i>
+       </div>
+       <div class="p-5">
+        <p class="text-[#d4af37] text-xs mb-2">الفصل الدراسي الثاني 1446</p>
+        <h3 class="font-bold text-[#0c2d1f] mb-2 text-sm">بدء التسجيل للعام الدراسي الجديد</h3>
+        <p class="text-[#0c2d1f]/60 text-xs">يسر إدارة المدرسة الإعلان عن فتح باب التسجيل عبر نظام نور.</p>
+       </div>
+      </div>
+      <div class="card-hover fade-in bg-white rounded-2xl overflow-hidden shadow-sm">
+       <div class="h-40 bg-gradient-to-br from-[#1a5c3a] to-[#2d7a50] flex items-center justify-center"><i data-lucide="award" style="width:48px;height:48px;color:#d4af37;"></i>
+       </div>
+       <div class="p-5">
+        <p class="text-[#d4af37] text-xs mb-2">إنجازات</p>
+        <h3 class="font-bold text-[#0c2d1f] mb-2 text-sm">طلابنا يحصدون المراكز الأولى</h3>
+        <p class="text-[#0c2d1f]/60 text-xs">تميز طلاب المدرسة في المسابقات العلمية على مستوى المنطقة.</p>
+       </div>
+      </div>
+      <div class="card-hover fade-in bg-white rounded-2xl overflow-hidden shadow-sm">
+       <div class="h-40 bg-gradient-to-br from-[#0f3d28] to-[#0c2d1f] flex items-center justify-center"><i data-lucide="users" style="width:48px;height:48px;color:#d4af37;"></i>
+       </div>
+       <div class="p-5">
+        <p class="text-[#d4af37] text-xs mb-2">فعاليات</p>
+        <h3 class="font-bold text-[#0c2d1f] mb-2 text-sm">اجتماع أولياء الأمور</h3>
+        <p class="text-[#0c2d1f]/60 text-xs">دعوة لحضور اجتماع أولياء الأمور لمناقشة مستوى الطلاب.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact Section -->
+   <section id="contact" class="py-16 md:py-24 hero-pattern relative">
+    <div class="relative z-10 max-w-6xl mx-auto px-4">
+     <div class="text-center mb-12 fade-in">
+      <p class="text-[#d4af37] font-bold text-sm mb-2">نسعد بتواصلكم</p>
+      <h2 class="text-2xl md:text-4xl font-black text-white mb-4" style="font-family:'Readex Pro','Tajawal',sans-serif;">تواصل معنا</h2>
+      <div class="section-divider"></div>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+      <div class="fade-in bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-[#d4af37]/20">
+       <div class="w-14 h-14 rounded-full gold-gradient flex items-center justify-center mx-auto mb-4"><i data-lucide="phone" style="width:24px;height:24px;color:#0c2d1f;"></i>
+       </div>
+       <h3 class="text-white font-bold mb-2">الهاتف</h3>
+       <p class="text-white/70 text-sm" dir="ltr">0508352570</p>
+      </div>
+      <div class="fade-in bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-[#d4af37]/20">
+       <div class="w-14 h-14 rounded-full gold-gradient flex items-center justify-center mx-auto mb-4"><i data-lucide="map-pin" style="width:24px;height:24px;color:#0c2d1f;"></i>
+       </div>
+       <h3 class="text-white font-bold mb-2">العنوان</h3>
+       <p class="text-white/70 text-sm">شارع سراج الدين العسقلاني، حي النخيل، الرياض 12381</p>
+      </div>
+      <div class="fade-in bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center border border-[#d4af37]/20">
+       <div class="w-14 h-14 rounded-full gold-gradient flex items-center justify-center mx-auto mb-4"><i data-lucide="clock" style="width:24px;height:24px;color:#0c2d1f;"></i>
+       </div>
+       <h3 class="text-white font-bold mb-2">ساعات العمل</h3>
+       <p class="text-white/70 text-sm">الأحد - الخميس<br>
+        6:30 ص - 1:30 م</p>
+      </div>
+     </div>
+     <div class="text-center mt-8 fade-in">
+      <p class="text-white/60 text-xs">للمراسلات الرسمية يُرجى استخدام نظام نور أو التواصل عبر الرقم المذكور</p>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="bg-[#071a11] py-8 border-t border-[#d4af37]/10">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+     <div class="flex items-center justify-center gap-2 mb-4">
+      <div class="w-8 h-8 rounded-full gold-gradient flex items-center justify-center">
+       <svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="#0c2d1f" stroke-width="2">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+       </svg>
+      </div><span class="text-white/80 font-bold text-sm" id="footer-name">ثانوية الأمير عبد المجيد بن عبدالعزيز</span>
+     </div>
+     <p class="text-white/40 text-xs">جميع الحقوق محفوظة © 2025 - وزارة التعليم - المملكة العربية السعودية</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+  // Element SDK
+  const defaultConfig = {
+    background_color: '#0c2d1f',
+    surface_color: '#ffffff',
+    text_color: '#0c2d1f',
+    primary_action_color: '#d4af37',
+    secondary_action_color: '#1a5c3a',
+    font_family: 'Tajawal',
+    font_size: 16,
+    school_name: 'ثانوية الأمير عبد المجيد بن عبدالعزيز',
+    welcome_text: 'نبني أجيالًا بالعلم والقيم نحو مستقبل مشرق',
+    about_text: 'تُعد ثانوية الأمير عبد المجيد بن عبدالعزيز من المدارس الحكومية المتميزة في شمال الرياض، حيث تقدم بيئة تعليمية محفزة تجمع بين التميز الأكاديمي والتربية القيمية. تأسست المدرسة لخدمة أبناء حي النخيل والأحياء المجاورة، وتسعى دائمًا لتخريج طلاب مؤهلين للمرحلة الجامعية وسوق العمل.',
+    principal_message: 'بسم الله الرحمن الرحيم، يسعدني أن أرحب بكم في ثانوية الأمير عبد المجيد بن عبدالعزيز. نحن نؤمن بأن التعليم ليس مجرد نقل معرفة، بل هو بناء شخصية متكاملة قادرة على المساهمة في نهضة وطننا الغالي. نعمل جاهدين لتوفير بيئة تعليمية آمنة ومحفزة، ونتطلع دائمًا للتعاون مع أولياء الأمور لتحقيق أفضل النتائج لأبنائنا الطلاب.'
+  };
+
+  async function onConfigChange(config) {
+    const c = key => config[key] || defaultConfig[key];
+    const font = c('font_family');
+    const baseSize = c('font_size');
+    const fontStack = `${font}, 'Readex Pro', sans-serif`;
+
+    document.getElementById('nav-title').textContent = c('school_name');
+    document.getElementById('hero-title').innerHTML = c('school_name').replace(' بن ', '<br>بن ');
+    document.getElementById('hero-welcome').textContent = c('welcome_text');
+    document.getElementById('about-text').textContent = c('about_text');
+    document.getElementById('principal-msg').textContent = c('principal_message');
+    document.getElementById('footer-name').textContent = c('school_name');
+
+    document.querySelectorAll('h1,h2,h3,h4,p,a,span,button').forEach(el => {
+      el.style.fontFamily = fontStack;
+    });
+
+    document.body.style.fontSize = baseSize + 'px';
+  }
+
+  function mapToCapabilities(config) {
+    const c = key => config[key] || defaultConfig[key];
+    const makeColor = (key) => ({
+      get: () => c(key),
+      set: (v) => { config[key] = v; window.elementSdk.setConfig({ [key]: v }); }
+    });
+    return {
+      recolorables: [
+        makeColor('background_color'),
+        makeColor('surface_color'),
+        makeColor('text_color'),
+        makeColor('primary_action_color'),
+        makeColor('secondary_action_color')
+      ],
+      borderables: [],
+      fontEditable: {
+        get: () => c('font_family'),
+        set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
+      },
+      fontSizeable: {
+        get: () => c('font_size'),
+        set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
+      }
+    };
+  }
+
+  function mapToEditPanelValues(config) {
+    const c = key => config[key] || defaultConfig[key];
+    return new Map([
+      ['school_name', c('school_name')],
+      ['welcome_text', c('welcome_text')],
+      ['about_text', c('about_text')],
+      ['principal_message', c('principal_message')]
+    ]);
+  }
+
+  if (window.elementSdk) {
+    window.elementSdk.init({ defaultConfig, onConfigChange, mapToCapabilities, mapToEditPanelValues });
+  }
+
+  // Mobile menu
+  document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+  document.querySelectorAll('#mobile-menu a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
+  });
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  lucide.createIcons();
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ec2220a01ed08b5',t:'MTc3NjE2MzY1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
